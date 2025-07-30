@@ -1,0 +1,63 @@
+<template>
+    <lightning-card title="Create Engineer Trade Rate Records">
+        <div class="slds-p-around_medium">
+
+            <!-- Engineer combobox with error class -->
+            <lightning-combobox
+                name="engineer"
+                label="Select Engineer"
+                value={selectedEngineer}
+                class={engineerComboboxClass}
+                options={engineerOptions}
+                onchange={handleEngineerChange}>
+            </lightning-combobox>
+
+            <!-- Trade dual-listbox with error wrapper -->
+            <div class="trade-box-wrapper {tradeBoxWrapperClass}">
+                <lightning-dual-listbox
+                    name="trades"
+                    label="Select Trades"
+                    source-label="Available"
+                    selected-label="Selected"
+                    options={tradeOptions}
+                    value={selectedTrades}
+                    onchange={handleTradeChange}>
+                </lightning-dual-listbox>
+            </div>
+
+            <!-- Tier combobox with error class -->
+            <lightning-combobox
+                name="tier"
+                label="Select Tier of Pay"
+                value={selectedTier}
+                class={tierComboboxClass}
+                options={tierOptions}
+                onchange={handleTierChange}>
+            </lightning-combobox>
+
+            <!-- Error message -->
+            <template if:true={error}>
+                <div class="slds-notify slds-notify_alert slds-alert_error slds-m-top_medium" role="alert">
+                    <span class="slds-assistive-text">Error</span>
+                    <h2>{error}</h2>
+                </div>
+            </template>
+
+            <!-- Buttons -->
+            <div class="slds-m-top_medium">
+                <lightning-button
+                    label="Create"
+                    variant="brand"
+                    onclick={handleCreate}>
+                </lightning-button>
+
+                <lightning-button
+                    class="slds-m-left_small"
+                    label="Close"
+                    variant="neutral"
+                    onclick={handleClose}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

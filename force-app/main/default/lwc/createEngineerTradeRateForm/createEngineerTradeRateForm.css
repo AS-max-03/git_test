@@ -1,0 +1,6 @@
+/* Red border around the whole dual listbox */
+.trade-error-border lightning-dual-listbox {
+    border: 2px solid #c23934;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
