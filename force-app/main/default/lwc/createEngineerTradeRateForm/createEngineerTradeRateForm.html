@@ -2,12 +2,11 @@
     <lightning-card title="Create Engineer Trade Rate Records">
         <div class="slds-p-around_medium">
 
-            <!-- Engineer combobox with error class -->
+            <!-- Engineer combobox (no red border) -->
             <lightning-combobox
                 name="engineer"
                 label="Select Engineer"
                 value={selectedEngineer}
-                class={engineerComboboxClass}
                 options={engineerOptions}
                 onchange={handleEngineerChange}>
             </lightning-combobox>
@@ -25,12 +24,11 @@
                 </lightning-dual-listbox>
             </div>
 
-            <!-- Tier combobox with error class -->
+            <!-- Tier combobox (no red border) -->
             <lightning-combobox
                 name="tier"
                 label="Select Tier of Pay"
                 value={selectedTier}
-                class={tierComboboxClass}
                 options={tierOptions}
                 onchange={handleTierChange}>
             </lightning-combobox>
